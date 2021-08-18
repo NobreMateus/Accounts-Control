@@ -38,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sxx-37-71x">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="accReceivableCell" id="sxx-37-71x" customClass="AccReceivableViewCell" customModule="Mobills_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sxx-37-71x" id="W17-4j-lRL">
@@ -52,19 +52,23 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 25,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hp1-Kz-vQ8">
-                                                    <rect key="frame" x="308" y="11.5" width="70" height="21"/>
+                                                    <rect key="frame" x="324" y="11.5" width="70" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hp1-Kz-vQ8" secondAttribute="trailing" constant="16" id="F6V-eI-eZZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hp1-Kz-vQ8" secondAttribute="trailing" id="F6V-eI-eZZ"/>
                                                 <constraint firstItem="hp1-Kz-vQ8" firstAttribute="centerY" secondItem="W17-4j-lRL" secondAttribute="centerY" id="I7c-Ok-PDv"/>
                                                 <constraint firstItem="gMO-lb-WfZ" firstAttribute="leading" secondItem="W17-4j-lRL" secondAttribute="leadingMargin" id="TQq-Vv-xep"/>
                                                 <constraint firstItem="gMO-lb-WfZ" firstAttribute="centerY" secondItem="W17-4j-lRL" secondAttribute="centerY" id="g8J-K3-dR4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="DescriptionLabel" destination="gMO-lb-WfZ" id="0Dd-9H-Hev"/>
+                                            <outlet property="ValueLabel" destination="hp1-Kz-vQ8" id="1e8-HN-i9S"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -79,6 +83,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4WN-ph-gcB"/>
+                    <connections>
+                        <outlet property="AccReceivableTableView" destination="x8d-bW-Yfb" id="trt-ZD-uZA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yc-Vo-Jpw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
