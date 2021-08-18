@@ -14,7 +14,6 @@ class AccPayableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        // Do any additional setup after loading the view.
     }
     
     func configureView() {
@@ -27,10 +26,9 @@ class AccPayableViewController: UIViewController {
     
     @objc
     func addTapped() {
-        
+        let accPayableFormViewController = storyboard?.instantiateViewController(withIdentifier: "accPayableForm") as! UINavigationController
+        self.present(accPayableFormViewController, animated: true)
     }
-
-
 }
 
 extension AccPayableViewController: UITableViewDelegate, UITableViewDataSource {
@@ -59,5 +57,14 @@ extension AccPayableViewController: UITableViewDelegate, UITableViewDataSource {
             print("Delete")
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let accPayableFormViewController = storyboard?.instantiateViewController(withIdentifier: "accPayableForm") as! UINavigationController
+        self.present(accPayableFormViewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
     }
 }
