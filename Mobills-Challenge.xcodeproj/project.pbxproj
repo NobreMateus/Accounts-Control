@@ -23,6 +23,7 @@
 		2781E57F26CCB8C2005E40AA /* AccReceivable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2781E57E26CCB8C2005E40AA /* AccReceivable.storyboard */; };
 		2781E58226CCB944005E40AA /* AccReceivableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E58126CCB944005E40AA /* AccReceivableViewController.swift */; };
 		2781E58426CD3B1F005E40AA /* AccPayableFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E58326CD3B1F005E40AA /* AccPayableFormViewController.swift */; };
+		2781E58626CD4CFE005E40AA /* AccReceivableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E58526CD4CFE005E40AA /* AccReceivableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		2781E57E26CCB8C2005E40AA /* AccReceivable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccReceivable.storyboard; sourceTree = "<group>"; };
 		2781E58126CCB944005E40AA /* AccReceivableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccReceivableViewController.swift; sourceTree = "<group>"; };
 		2781E58326CD3B1F005E40AA /* AccPayableFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccPayableFormViewController.swift; sourceTree = "<group>"; };
+		2781E58526CD4CFE005E40AA /* AccReceivableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccReceivableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				2781E58026CCB8FE005E40AA /* Storyboards */,
 				2781E57626CCAB1C005E40AA /* AccPayableViewCell.swift */,
+				2781E58526CD4CFE005E40AA /* AccReceivableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2781E57126CC65D5005E40AA /* AccPayableViewController.swift in Sources */,
+				2781E58626CD4CFE005E40AA /* AccReceivableViewCell.swift in Sources */,
 				2781E58426CD3B1F005E40AA /* AccPayableFormViewController.swift in Sources */,
 				2781E57326CC67C6005E40AA /* MainTabBarController.swift in Sources */,
 				2781E53E26CC6209005E40AA /* AppDelegate.swift in Sources */,
