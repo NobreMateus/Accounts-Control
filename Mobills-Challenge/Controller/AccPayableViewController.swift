@@ -22,6 +22,12 @@ class AccPayableViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         AccPayableTableView.delegate = self
         AccPayableTableView.dataSource = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+    }
+    
+    @objc
+    func addTapped() {
+        
     }
 
 
@@ -38,5 +44,20 @@ extension AccPayableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let payAction = UIContextualAction(style: .normal, title: "Pagar") { [weak self] (action, view, completionHandler) in
+            print("Ok")
+        }
+        payAction.backgroundColor = .systemBlue
+        return UISwipeActionsConfiguration(actions: [payAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            print("Delete")
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
