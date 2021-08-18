@@ -33,8 +33,50 @@
                     <view key="view" contentMode="scaleToFill" id="gmv-0T-6MZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-bW-Yfb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sxx-37-71x">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sxx-37-71x" id="W17-4j-lRL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta a receber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMO-lb-WfZ">
+                                                    <rect key="frame" x="20" y="11.5" width="122" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 25,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hp1-Kz-vQ8">
+                                                    <rect key="frame" x="308" y="11.5" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hp1-Kz-vQ8" secondAttribute="trailing" constant="16" id="F6V-eI-eZZ"/>
+                                                <constraint firstItem="hp1-Kz-vQ8" firstAttribute="centerY" secondItem="W17-4j-lRL" secondAttribute="centerY" id="I7c-Ok-PDv"/>
+                                                <constraint firstItem="gMO-lb-WfZ" firstAttribute="leading" secondItem="W17-4j-lRL" secondAttribute="leadingMargin" id="TQq-Vv-xep"/>
+                                                <constraint firstItem="gMO-lb-WfZ" firstAttribute="centerY" secondItem="W17-4j-lRL" secondAttribute="centerY" id="g8J-K3-dR4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="W3z-XX-24e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x8d-bW-Yfb" firstAttribute="leading" secondItem="W3z-XX-24e" secondAttribute="leading" id="10h-5Z-dVV"/>
+                            <constraint firstItem="W3z-XX-24e" firstAttribute="bottom" secondItem="x8d-bW-Yfb" secondAttribute="bottom" id="BAV-SH-JOS"/>
+                            <constraint firstItem="W3z-XX-24e" firstAttribute="trailing" secondItem="x8d-bW-Yfb" secondAttribute="trailing" id="RIp-5F-nAD"/>
+                            <constraint firstItem="x8d-bW-Yfb" firstAttribute="top" secondItem="W3z-XX-24e" secondAttribute="top" id="wV1-nd-hgu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4WN-ph-gcB"/>
                 </viewController>
