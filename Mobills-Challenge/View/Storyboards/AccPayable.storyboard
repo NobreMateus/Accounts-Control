@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Qf-h1-iCM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contas a Pagar-->
+        <scene sceneID="4rG-Nh-r1P">
+            <objects>
+                <navigationController id="2Qf-h1-iCM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contas a Pagar" id="2hI-Nt-L7u"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5W-aE-LIf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FOA-2T-arH" kind="relationship" relationship="rootViewController" id="lkL-aN-r9O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8Q-9Z-CC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2142" y="1922"/>
+        </scene>
+        <!--Acc-->
+        <scene sceneID="fN1-Qh-S8v">
+            <objects>
+                <viewController title="Acc" id="FOA-2T-arH" customClass="AccPayableViewController" customModule="Mobills_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="frr-Kd-bge">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hlA-gs-1UA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="accPayableCell" id="Aj6-Jo-H61" customClass="AccPayableViewCell" customModule="Mobills_Challenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="accPayableCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aj6-Jo-H61" id="2GD-ik-He5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta a Pagar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66l-2s-cAg">
+                                                    <rect key="frame" x="36" y="11.5" width="108" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 25,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEi-N1-oEG">
+                                                    <rect key="frame" x="328" y="11.5" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UEi-N1-oEG" secondAttribute="trailing" constant="16" id="GSZ-k6-jSt"/>
+                                                <constraint firstItem="66l-2s-cAg" firstAttribute="leading" secondItem="2GD-ik-He5" secondAttribute="leadingMargin" constant="16" id="IPm-bX-83S"/>
+                                                <constraint firstItem="66l-2s-cAg" firstAttribute="centerY" secondItem="2GD-ik-He5" secondAttribute="centerY" id="IwW-hp-VcD"/>
+                                                <constraint firstItem="UEi-N1-oEG" firstAttribute="centerY" secondItem="2GD-ik-He5" secondAttribute="centerY" id="SEw-J5-Dkz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accDescription" destination="66l-2s-cAg" id="Ibk-dc-oiM"/>
+                                            <outlet property="accValueLabel" destination="UEi-N1-oEG" id="A9f-da-eMP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ecy-Tg-XmT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hlA-gs-1UA" firstAttribute="top" secondItem="ecy-Tg-XmT" secondAttribute="top" id="2GZ-uZ-lNU"/>
+                            <constraint firstItem="hlA-gs-1UA" firstAttribute="leading" secondItem="ecy-Tg-XmT" secondAttribute="leading" id="C0d-Hv-dQy"/>
+                            <constraint firstItem="ecy-Tg-XmT" firstAttribute="bottom" secondItem="hlA-gs-1UA" secondAttribute="bottom" id="NTX-7u-93l"/>
+                            <constraint firstItem="ecy-Tg-XmT" firstAttribute="trailing" secondItem="hlA-gs-1UA" secondAttribute="trailing" id="lPu-pf-gqv"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Contas a Pagar" id="e9h-48-Pby"/>
+                    <navigationItem key="navigationItem" id="WTg-kg-Uc4"/>
+                    <connections>
+                        <outlet property="AccPayableTableView" destination="hlA-gs-1UA" id="0mw-V8-bq9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfj-Qh-HdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1262" y="1922"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
