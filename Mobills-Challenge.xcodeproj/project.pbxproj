@@ -24,6 +24,8 @@
 		2781E58226CCB944005E40AA /* AccReceivableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E58126CCB944005E40AA /* AccReceivableViewController.swift */; };
 		2781E58426CD3B1F005E40AA /* AccPayableFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E58326CD3B1F005E40AA /* AccPayableFormViewController.swift */; };
 		2781E58626CD4CFE005E40AA /* AccReceivableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E58526CD4CFE005E40AA /* AccReceivableViewCell.swift */; };
+		2781E58826CDE6FB005E40AA /* AccountPayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E58726CDE6FB005E40AA /* AccountPayable.swift */; };
+		2781E58A26CDE90E005E40AA /* AccountReceivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E58926CDE90E005E40AA /* AccountReceivable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		2781E58126CCB944005E40AA /* AccReceivableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccReceivableViewController.swift; sourceTree = "<group>"; };
 		2781E58326CD3B1F005E40AA /* AccPayableFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccPayableFormViewController.swift; sourceTree = "<group>"; };
 		2781E58526CD4CFE005E40AA /* AccReceivableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccReceivableViewCell.swift; sourceTree = "<group>"; };
+		2781E58726CDE6FB005E40AA /* AccountPayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPayable.swift; sourceTree = "<group>"; };
+		2781E58926CDE90E005E40AA /* AccountReceivable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountReceivable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 		2781E56D26CC654B005E40AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2781E58726CDE6FB005E40AA /* AccountPayable.swift */,
+				2781E58926CDE90E005E40AA /* AccountReceivable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +332,8 @@
 				2781E57326CC67C6005E40AA /* MainTabBarController.swift in Sources */,
 				2781E53E26CC6209005E40AA /* AppDelegate.swift in Sources */,
 				2781E57926CCAF44005E40AA /* AccSummaryViewController.swift in Sources */,
+				2781E58826CDE6FB005E40AA /* AccountPayable.swift in Sources */,
+				2781E58A26CDE90E005E40AA /* AccountReceivable.swift in Sources */,
 				2781E54026CC6209005E40AA /* SceneDelegate.swift in Sources */,
 				2781E58226CCB944005E40AA /* AccReceivableViewController.swift in Sources */,
 				2781E57726CCAB1C005E40AA /* AccPayableViewCell.swift in Sources */,
