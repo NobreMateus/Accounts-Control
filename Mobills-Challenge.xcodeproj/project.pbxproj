@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -147,7 +147,6 @@
 				2781E53D26CC6209005E40AA /* AppDelegate.swift */,
 				2781E53F26CC6209005E40AA /* SceneDelegate.swift */,
 				2781E54626CC6210005E40AA /* Assets.xcassets */,
-				2781E54826CC6210005E40AA /* LaunchScreen.storyboard */,
 				2781E54B26CC6210005E40AA /* Info.plist */,
 			);
 			path = "Mobills-Challenge";
@@ -207,6 +206,7 @@
 			children = (
 				2781E57C26CCB79E005E40AA /* AccSummary.storyboard */,
 				2781E57A26CCB633005E40AA /* AccPayable.storyboard */,
+				2781E54826CC6210005E40AA /* LaunchScreen.storyboard */,
 				2781E57E26CCB8C2005E40AA /* AccReceivable.storyboard */,
 				2781E54326CC620A005E40AA /* Main.storyboard */,
 			);
@@ -233,7 +233,6 @@
 				A8C4FA210BE85F5CA96CC162 /* Pods-Mobills-ChallengeTests.debug.xcconfig */,
 				61A97AE13E410BAF8A19336D /* Pods-Mobills-ChallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
