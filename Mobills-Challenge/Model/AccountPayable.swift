@@ -13,11 +13,13 @@ class AccountPayable {
     var description: String
     var date: Date
     var isPaid: Bool
+    var id: String?
 
-    init(value: Double, description: String, date: Date, isPaid: Bool) {
+    init(value: Double, description: String, date: Date, isPaid: Bool, id: String?) {
         self.value = value
         self.description = description
         self.date = date
         self.isPaid = isPaid
+        self.id = id
     }
 }   

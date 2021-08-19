@@ -36,11 +36,12 @@ class AccPayableFormViewController: UIViewController {
     
     @objc
     func saveData() {
+        guard let currentAccount = self.accPayable else { return }
         navigationController?.dismiss(animated: true)
         guard let saveAction = save else {return}
         let description = DescriptionTextField.text ?? ""
         let value = Double(ValueTextField.text ?? "") ?? 0
-        let saveAcc = AccountPayable(value: value, description: description, date: DateDatePicker.date, isPaid: false)
+        let saveAcc = AccountPayable(value: value, description: description, date: DateDatePicker.date, isPaid: false, id: currentAccount.id)
         saveAction(saveAcc)
     }
     
