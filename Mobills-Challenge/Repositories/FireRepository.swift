@@ -11,10 +11,20 @@ import Firebase
 class FireRepository: AccPayableRepositoryProtocol {
     
     let db = Firestore.firestore()
+    let auth = FirebaseAuth.Auth.auth()
+    let user: User?
+    let usersCollection = "users"
+    let accountsCollection = "accountsPayable"
+    
+    init() {
+        user = auth.currentUser
+    }
     
     func create(account: AccountPayable, completion: ((_ account: AccountPayable)->Void)?) {
+        guard let currentUser = user else { return }
+        let uid = currentUser.uid
         var ref: DocumentReference? = nil
-        ref = db.collection("accountsPayable").addDocument(data: [
+        ref = db.collection(usersCollection).document(uid).collection(accountsCollection).addDocument(data: [
             "description": account.description,
             "value": account.value,
             "date": account.date,
@@ -30,7 +40,9 @@ class FireRepository: AccPayableRepositoryProtocol {
     }
     
     func read(id: String, account: AccountPayable, completion: ((_ account: AccountPayable)->Void)?) {
-        db.collection("accountsPayable").document(id).getDocument{ (snap, err) in
+        guard let currentUser = user else { return }
+        let uid = currentUser.uid
+        db.collection("users").document(uid).collection(accountsCollection).document(id).getDocument{ (snap, err) in
             guard let currentSnap = snap else { return }
             let acc = AccountPayable(
                 value: 0,
@@ -48,7 +60,9 @@ class FireRepository: AccPayableRepositoryProtocol {
     }
     
     func update(id: String, account: AccountPayable, completion: ((_ account: AccountPayable)->Void)?) {
-        db.collection("accountsPayable").document(id).updateData([
+        guard let currentUser = user else { return }
+        let uid = currentUser.uid
+        db.collection(usersCollection).document(uid).collection(accountsCollection).document(id).updateData([
             "description": account.description,
             "value": account.value,
             "date": account.date,
@@ -58,11 +72,15 @@ class FireRepository: AccPayableRepositoryProtocol {
     }
     
     func delete(id: String, _ completion: (()->Void)?) {
-        db.collection("accountsPayable").document(id).delete()
+        guard let currentUser = user else { return }
+        let uid = currentUser.uid
+        db.collection(usersCollection).document(uid).collection(accountsCollection).document(id).delete()
     }
     
     func readAll(completion: ((_ accounts: [AccountPayable])->Void)?) {
-        db.collection("accountsPayable").getDocuments { (snap, err) in
+        guard let currentUser = user else { return }
+        let uid = currentUser.uid
+        db.collection(usersCollection).document(uid).collection(accountsCollection).getDocuments { (snap, err) in
             var allAccounts: [AccountPayable] = []
             for doc in snap!.documents {
                 let account = AccountPayable(
