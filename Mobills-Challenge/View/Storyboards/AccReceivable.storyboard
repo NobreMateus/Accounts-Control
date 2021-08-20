@@ -38,34 +38,46 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="accReceivableCell" id="sxx-37-71x" customClass="AccReceivableViewCell" customModule="Mobills_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="accReceivableCell" rowHeight="80" id="sxx-37-71x" customClass="AccReceivableViewCell" customModule="Mobills_Challenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sxx-37-71x" id="W17-4j-lRL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta a receber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMO-lb-WfZ">
-                                                    <rect key="frame" x="20" y="11.5" width="122" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 25,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hp1-Kz-vQ8">
-                                                    <rect key="frame" x="324" y="11.5" width="70" height="21"/>
+                                                    <rect key="frame" x="324.5" y="30" width="69.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iho-MY-ER9">
+                                                    <rect key="frame" x="20" y="21.5" width="122" height="37.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta a receber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMO-lb-WfZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="122" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/03/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuA-xf-JDh">
+                                                            <rect key="frame" x="0.0" y="20.5" width="122" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hp1-Kz-vQ8" secondAttribute="trailing" id="F6V-eI-eZZ"/>
                                                 <constraint firstItem="hp1-Kz-vQ8" firstAttribute="centerY" secondItem="W17-4j-lRL" secondAttribute="centerY" id="I7c-Ok-PDv"/>
-                                                <constraint firstItem="gMO-lb-WfZ" firstAttribute="leading" secondItem="W17-4j-lRL" secondAttribute="leadingMargin" id="TQq-Vv-xep"/>
-                                                <constraint firstItem="gMO-lb-WfZ" firstAttribute="centerY" secondItem="W17-4j-lRL" secondAttribute="centerY" id="g8J-K3-dR4"/>
+                                                <constraint firstItem="iho-MY-ER9" firstAttribute="centerY" secondItem="W17-4j-lRL" secondAttribute="centerY" id="Q6A-No-Efw"/>
+                                                <constraint firstItem="iho-MY-ER9" firstAttribute="leading" secondItem="W17-4j-lRL" secondAttribute="leadingMargin" id="xhN-Az-0qK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="DateLabel" destination="AuA-xf-JDh" id="ncg-nZ-SCE"/>
                                             <outlet property="DescriptionLabel" destination="gMO-lb-WfZ" id="0Dd-9H-Hev"/>
                                             <outlet property="ValueLabel" destination="hp1-Kz-vQ8" id="1e8-HN-i9S"/>
                                         </connections>
@@ -89,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yc-Vo-Jpw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="-48"/>
+            <point key="canvasLocation" x="186.95652173913044" y="-48.214285714285715"/>
         </scene>
         <!--Adicionar-->
         <scene sceneID="ew8-QH-jGk">

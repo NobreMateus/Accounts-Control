@@ -60,12 +60,11 @@ extension AccReceivableViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = AccReceivableTableView.dequeueReusableCell(withIdentifier: "accReceivableCell", for: indexPath) as! AccReceivableViewCell
-        cell.DescriptionLabel.text = accountsReceivable[indexPath.row].description
-        cell.ValueLabel.text = "R$25,00"
+        cell.configCell(account: accountsReceivable[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64
+        return 80
     }
 }
