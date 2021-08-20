@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         let handler = Firebase.Auth.auth()
         handler.addStateDidChangeListener(){ (auth, user) in
             guard user != nil else { return }
-            //self.performSegue(withIdentifier: "AppEnterSegue", sender: nil)
+            self.performSegue(withIdentifier: "AppEnterSegue", sender: nil)
         }
     }
 
