@@ -55,12 +55,12 @@ class AccReceivableViewController: UIViewController, UITableViewDelegate, UITabl
 
 extension AccReceivableViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return accountsReceivable.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = AccReceivableTableView.dequeueReusableCell(withIdentifier: "accReceivableCell", for: indexPath) as! AccReceivableViewCell
-        cell.DescriptionLabel.text = "Teste"
+        cell.DescriptionLabel.text = accountsReceivable[indexPath.row].description
         cell.ValueLabel.text = "R$25,00"
         return cell
     }
