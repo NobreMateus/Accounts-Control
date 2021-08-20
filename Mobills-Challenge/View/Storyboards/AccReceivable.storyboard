@@ -12,7 +12,7 @@
         <scene sceneID="Hr1-Q9-giH">
             <objects>
                 <navigationController id="Szu-LD-omJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contas a Receber" id="NFU-Tg-GeQ"/>
+                    <tabBarItem key="tabBarItem" title="Contas a Receber" image="arrow.up.circle" catalog="system" selectedImage="arrow.up.circle.fill" id="NFU-Tg-GeQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a37-SU-Hz9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -93,6 +93,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.up.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

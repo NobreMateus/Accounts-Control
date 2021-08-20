@@ -13,11 +13,13 @@ class AccountReceivable {
     var description: String
     var date: Date
     var isReceived: Bool
+    var id: String?
 
-    init(value: Double, description: String, date: Date, isReceived: Bool) {
+    init(value: Double, description: String, date: Date, isReceived: Bool, id: String?) {
         self.value = value
         self.description = description
         self.date = date
         self.isReceived = isReceived
+        self.id = id
     }
 }

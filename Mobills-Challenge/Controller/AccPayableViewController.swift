@@ -24,7 +24,10 @@ class AccPayableViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         AccPayableTableView.delegate = self
         AccPayableTableView.dataSource = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        let addBtn = UIBarButtonItem(systemItem: .add)
+        addBtn.action = #selector(addAccAction)
+        addBtn.target = self
+        navigationItem.rightBarButtonItem = addBtn
     }
     
     func configureData() {
@@ -35,7 +38,7 @@ class AccPayableViewController: UIViewController {
     }
     
     @objc
-    func addTapped() {
+    func addAccAction() {
         let newAccount = AccountPayable(value: 0, description: "", date: Date(), isPaid: false, id: nil)
         let accPayableFormViewController = storyboard?.instantiateViewController(withIdentifier: "accPayableForm") as! UINavigationController
         let vc = storyboard?.instantiateViewController(withIdentifier: "accPayableFormViewController") as! AccPayableFormViewController
@@ -54,8 +57,7 @@ extension AccPayableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = AccPayableTableView.dequeueReusableCell(withIdentifier: "accPayableCell", for: indexPath) as! AccPayableViewCell
-        cell.accDescription.text = accountsPayable[indexPath.row].description
-        cell.accValueLabel.text = "R$ \(String(format: "%.2f", accountsPayable[indexPath.row].value))"
+        cell.configCell(account: accountsPayable[indexPath.row])
         return cell
     }
     
@@ -66,7 +68,7 @@ extension AccPayableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let payAction = UIContextualAction(style: .normal, title: "Pagar") { [weak self] (action, view, completionHandler) in
             guard let ctx = self else { return }
-            guard let accId = self?.accountsPayable[indexPath.row].id else { return }
+            guard let accId = ctx.accountsPayable[indexPath.row].id else { return }
             ctx.accountsPayable[indexPath.row].isPaid = true
             ctx.fireRepo.update(id: accId, account: ctx.accountsPayable[indexPath.row], completion: nil)
             ctx.accountsPayable.remove(at: indexPath.row)
@@ -77,11 +79,12 @@ extension AccPayableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, view, completionHandler) in
-            guard let accId = self?.accountsPayable[indexPath.row].id else { return }
-            self?.fireRepo.delete(id: accId, nil)
-            self?.accountsPayable.remove(at: indexPath.row)
-            self?.AccPayableTableView.reloadData()
+        let deleteAction = UIContextualAction(style: .destructive, title: "Deletar") { [weak self] (action, view, completionHandler) in
+            guard let ctx = self else { return }
+            guard let accId = ctx.accountsPayable[indexPath.row].id else { return }
+            ctx.fireRepo.delete(id: accId, nil)
+            ctx.accountsPayable.remove(at: indexPath.row)
+            ctx.AccPayableTableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
@@ -100,6 +103,6 @@ extension AccPayableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64
+        return 80
     }
 }

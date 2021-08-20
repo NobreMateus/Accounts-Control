@@ -12,7 +12,7 @@
         <scene sceneID="khi-CG-5yS">
             <objects>
                 <navigationController id="jb0-Zc-RzC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Resumo" id="yDK-Ey-TX2"/>
+                    <tabBarItem key="tabBarItem" title="Resumo" image="doc.text" catalog="system" selectedImage="doc.text.fill" id="yDK-Ey-TX2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Lj-mU-q0V">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -44,6 +44,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
+        <image name="doc.text.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

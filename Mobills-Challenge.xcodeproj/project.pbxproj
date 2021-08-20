@@ -32,6 +32,7 @@
 		2781E59426CF2173005E40AA /* FireAuthRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E59326CF2173005E40AA /* FireAuthRepo.swift */; };
 		2781E59626CF2841005E40AA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2781E59526CF2841005E40AA /* Login.storyboard */; };
 		2781E59826CF2C34005E40AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E59726CF2C34005E40AA /* LoginViewController.swift */; };
+		2781E59A26CF574B005E40AA /* FireAccReceivableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781E59926CF574B005E40AA /* FireAccReceivableRepository.swift */; };
 		749E6D5859B4B51F876C1F69 /* Pods_Mobills_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961721233E151EDCF30D1BAD /* Pods_Mobills_Challenge.framework */; };
 		D1D92A7EF817FA6D42A48C00 /* Pods_Mobills_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77904CE43D27E860F7A72073 /* Pods_Mobills_ChallengeTests.framework */; };
 		F11CC2668384B34B8F59CDA0 /* Pods_Mobills_Challenge_Mobills_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59C17E0BA9054CFD4610A18B /* Pods_Mobills_Challenge_Mobills_ChallengeUITests.framework */; };
@@ -87,6 +88,7 @@
 		2781E59326CF2173005E40AA /* FireAuthRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuthRepo.swift; sourceTree = "<group>"; };
 		2781E59526CF2841005E40AA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2781E59726CF2C34005E40AA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2781E59926CF574B005E40AA /* FireAccReceivableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAccReceivableRepository.swift; sourceTree = "<group>"; };
 		59C17E0BA9054CFD4610A18B /* Pods_Mobills_Challenge_Mobills_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobills_Challenge_Mobills_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A97AE13E410BAF8A19336D /* Pods-Mobills-ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobills-ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Mobills-ChallengeTests/Pods-Mobills-ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		6CBADAAB46EBBFEBC90E6AA1 /* Pods-Mobills-Challenge-Mobills-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobills-Challenge-Mobills-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-Mobills-Challenge-Mobills-ChallengeUITests/Pods-Mobills-Challenge-Mobills-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				2781E58E26CF0941005E40AA /* Protocols */,
 				2781E59126CF0A8D005E40AA /* FireRepository.swift */,
 				2781E59326CF2173005E40AA /* FireAuthRepo.swift */,
+				2781E59926CF574B005E40AA /* FireAccReceivableRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2781E57126CC65D5005E40AA /* AccPayableViewController.swift in Sources */,
+				2781E59A26CF574B005E40AA /* FireAccReceivableRepository.swift in Sources */,
 				2781E58626CD4CFE005E40AA /* AccReceivableViewCell.swift in Sources */,
 				2781E58426CD3B1F005E40AA /* AccPayableFormViewController.swift in Sources */,
 				2781E59826CF2C34005E40AA /* LoginViewController.swift in Sources */,
@@ -708,6 +712,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Academy.Mobills.Mobills-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -728,6 +733,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Academy.Mobills.Mobills-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
