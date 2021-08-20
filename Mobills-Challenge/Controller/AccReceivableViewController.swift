@@ -81,4 +81,28 @@ extension AccReceivableViewController {
         accReceivableFormNavigationController.viewControllers.append(vc)
         self.present(accReceivableFormNavigationController, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let payAction = UIContextualAction(style: .normal, title: "Receber") { [weak self] (action, view, completionHandler) in
+            guard let ctx = self else { return }
+            guard let accId = ctx.accountsReceivable[indexPath.row].id else { return }
+            ctx.accountsReceivable[indexPath.row].isReceived = true
+            ctx.repo.update(id: accId, account: ctx.accountsReceivable[indexPath.row], completion: nil)
+            ctx.accountsReceivable.remove(at: indexPath.row)
+            ctx.AccReceivableTableView.reloadData()
+        }
+        payAction.backgroundColor = .systemBlue
+        return UISwipeActionsConfiguration(actions: [payAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Deletar") { [weak self] (action, view, completionHandler) in
+            guard let ctx = self else { return }
+            guard let accId = ctx.accountsReceivable[indexPath.row].id else { return }
+            ctx.repo.delete(id: accId, nil)
+            ctx.accountsReceivable.remove(at: indexPath.row)
+            ctx.AccReceivableTableView.reloadData()
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }
