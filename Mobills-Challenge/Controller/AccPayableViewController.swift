@@ -24,8 +24,8 @@ class AccPayableViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         AccPayableTableView.delegate = self
         AccPayableTableView.dataSource = self
-        self.AccPayableTableView.tableFooterView = UIView()
-        self.AccPayableTableView.backgroundColor = .clear
+        AccPayableTableView.tableFooterView = UIView()
+        AccPayableTableView.backgroundColor = .clear
         let addBtn = UIBarButtonItem(systemItem: .add)
         addBtn.action = #selector(addAccAction)
         addBtn.target = self
