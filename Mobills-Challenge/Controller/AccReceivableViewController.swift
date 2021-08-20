@@ -67,4 +67,18 @@ extension AccReceivableViewController {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let accReceivableFormNavigationController = storyboard?.instantiateViewController(withIdentifier: "accReceivableForm") as! UINavigationController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "accReceivableFormViewController") as! AccReceivableFormViewController
+        
+        vc.configureCell(accountPayable: accountsReceivable[indexPath.row]){ editedAccount in
+            guard let accId = editedAccount.id else { return }
+            self.repo.update(id: accId, account: editedAccount, completion: nil)
+            self.accountsReceivable[indexPath.row] = editedAccount
+            tableView.reloadData()
+        }
+        accReceivableFormNavigationController.viewControllers.append(vc)
+        self.present(accReceivableFormNavigationController, animated: true)
+    }
 }
