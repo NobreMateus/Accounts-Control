@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AccSummaryViewController: UIViewController {
 
@@ -28,6 +29,18 @@ class AccSummaryViewController: UIViewController {
     func configureView() {
         title = "Resumo"
         navigationController?.navigationBar.prefersLargeTitles = true
+        let addBtn = UIBarButtonItem(systemItem: .close)
+        addBtn.action = #selector(logOut)
+        addBtn.target = self
+        navigationItem.rightBarButtonItem = addBtn
+    }
+    
+    @objc
+    func logOut() {
+        let handler = Firebase.Auth.auth()
+        do {
+            try handler.signOut()
+        } catch {}
     }
     
     func configureTable() {

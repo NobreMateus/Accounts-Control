@@ -22,15 +22,9 @@ class LoginViewController: UIViewController {
     @objc
     func login() {
         let handler = Firebase.Auth.auth()
-        handler.signIn(withEmail: "mateus@mateus.com", password: "123456")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let handler = Firebase.Auth.auth()
-        handler.addStateDidChangeListener(){ (auth, user) in
-            guard user != nil else { return }
-            self.performSegue(withIdentifier: "AppEnterSegue", sender: nil)
-        }
+        let email = LoginTextField.text
+        let password = PassTextField.text
+        handler.signIn(withEmail: email!, password: password!)
     }
 
   

@@ -24,6 +24,7 @@ class AccReceivableViewController: UIViewController, UITableViewDelegate, UITabl
         navigationController?.navigationBar.prefersLargeTitles = true
         AccReceivableTableView.delegate = self
         AccReceivableTableView.dataSource = self
+        AccReceivableTableView.tableFooterView = UIView()
         let addBtn = UIBarButtonItem(systemItem: .add)
         addBtn.action = #selector(addAccAction)
         addBtn.target = self
