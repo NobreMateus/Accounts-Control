@@ -40,16 +40,16 @@ class AccReceivableViewController: UIViewController, UITableViewDelegate, UITabl
     @objc
     func addAccAction() {
         let newAccount = AccountReceivable(value: 0, description: "", date: Date(), isReceived: false, id: nil)
-        let accPayableFormViewController = storyboard?.instantiateViewController(withIdentifier: "accPayableForm") as! UINavigationController
-        let vc = storyboard?.instantiateViewController(withIdentifier: "accPayableFormViewController") as! AccPayableFormViewController
-//        vc.configureCell(accountPayable: newAccount){ newAccount in
-//            self.repo.create(account: newAccount) { account in
-//                self.accountsPayable.append(account)
-//                self.AccPayableTableView.reloadData()
-//            }
-//        }
-        accPayableFormViewController.viewControllers.append(vc)
-        self.present(accPayableFormViewController, animated: true)
+        let accReceivableFormViewController = storyboard?.instantiateViewController(withIdentifier: "accReceivableForm") as! UINavigationController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "accReceivableFormViewController") as! AccReceivableFormViewController
+        vc.configureCell(accountPayable: newAccount){ newAccount in
+            self.repo.create(account: newAccount) { account in
+                self.accountsReceivable.append(account)
+                self.AccReceivableTableView.reloadData()
+            }
+        }
+        accReceivableFormViewController.viewControllers.append(vc)
+        self.present(accReceivableFormViewController, animated: true)
     }
 }
 

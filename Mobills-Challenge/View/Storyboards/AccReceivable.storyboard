@@ -91,6 +91,90 @@
             </objects>
             <point key="canvasLocation" x="188" y="-48"/>
         </scene>
+        <!--Adicionar-->
+        <scene sceneID="ew8-QH-jGk">
+            <objects>
+                <viewController storyboardIdentifier="accReceivableFormViewController" title="Adicionar" id="Vqg-mj-2VM" customClass="AccReceivableFormViewController" customModule="Mobills_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HHF-oY-XgG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrX-c2-Cnf">
+                                <rect key="frame" x="16" y="76" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckl-bw-3PX">
+                                <rect key="frame" x="16" y="105" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzg-YI-AoI">
+                                <rect key="frame" x="16" y="155" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-EZ-tB2">
+                                <rect key="frame" x="16" y="184" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Recebimento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SW-zs-D6a">
+                                <rect key="frame" x="16" y="234" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4t9-49-8zl">
+                                <rect key="frame" x="16" y="262" width="382" height="216"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c64-8u-l64"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c64-8u-l64" firstAttribute="trailing" secondItem="4t9-49-8zl" secondAttribute="trailing" constant="16" id="4Bx-IL-9VE"/>
+                            <constraint firstItem="6SW-zs-D6a" firstAttribute="top" secondItem="sUU-EZ-tB2" secondAttribute="bottom" constant="16" id="9zQ-l9-bCx"/>
+                            <constraint firstItem="4t9-49-8zl" firstAttribute="leading" secondItem="c64-8u-l64" secondAttribute="leading" constant="16" id="CB6-tB-4w7"/>
+                            <constraint firstItem="Fzg-YI-AoI" firstAttribute="leading" secondItem="c64-8u-l64" secondAttribute="leading" constant="16" id="Fhf-Xp-9Vx"/>
+                            <constraint firstItem="ckl-bw-3PX" firstAttribute="leading" secondItem="c64-8u-l64" secondAttribute="leading" constant="16" id="GU9-zy-uSX"/>
+                            <constraint firstItem="rrX-c2-Cnf" firstAttribute="leading" secondItem="c64-8u-l64" secondAttribute="leading" constant="16" id="JxF-rh-hTZ"/>
+                            <constraint firstItem="c64-8u-l64" firstAttribute="trailing" secondItem="sUU-EZ-tB2" secondAttribute="trailing" constant="16" id="OJT-kb-hCx"/>
+                            <constraint firstItem="c64-8u-l64" firstAttribute="trailing" secondItem="ckl-bw-3PX" secondAttribute="trailing" constant="16" id="OLT-EU-DLG"/>
+                            <constraint firstItem="sUU-EZ-tB2" firstAttribute="leading" secondItem="c64-8u-l64" secondAttribute="leading" constant="16" id="QoW-e6-cQF"/>
+                            <constraint firstItem="Fzg-YI-AoI" firstAttribute="top" secondItem="ckl-bw-3PX" secondAttribute="bottom" constant="16" id="YxN-3i-6ML"/>
+                            <constraint firstItem="6SW-zs-D6a" firstAttribute="leading" secondItem="c64-8u-l64" secondAttribute="leading" constant="16" id="aqe-2i-eFb"/>
+                            <constraint firstItem="rrX-c2-Cnf" firstAttribute="top" secondItem="c64-8u-l64" secondAttribute="top" constant="32" id="gWb-nz-ITE"/>
+                            <constraint firstItem="4t9-49-8zl" firstAttribute="top" secondItem="6SW-zs-D6a" secondAttribute="bottom" constant="8" id="pcS-nM-JIT"/>
+                            <constraint firstItem="ckl-bw-3PX" firstAttribute="top" secondItem="rrX-c2-Cnf" secondAttribute="bottom" constant="8" id="pv4-XE-8CD"/>
+                            <constraint firstItem="sUU-EZ-tB2" firstAttribute="top" secondItem="Fzg-YI-AoI" secondAttribute="bottom" constant="8" id="yht-Hd-l20"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adicionar" id="EFR-AE-F6r"/>
+                    <connections>
+                        <outlet property="DateDatePicker" destination="4t9-49-8zl" id="h8N-yN-6FX"/>
+                        <outlet property="descriptionTextField" destination="ckl-bw-3PX" id="dCD-Jd-vNA"/>
+                        <outlet property="valueTextField" destination="sUU-EZ-tB2" id="bhN-jl-qag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfu-0c-fzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="187" y="681"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6GS-7t-SAe">
+            <objects>
+                <navigationController storyboardIdentifier="accReceivableForm" id="OU6-Dn-Hpg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KRg-P9-UPj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rGK-jj-ffa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-780" y="680"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.up.circle" catalog="system" width="128" height="121"/>

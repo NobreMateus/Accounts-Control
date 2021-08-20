@@ -10,11 +10,19 @@ import UIKit
 class AccSummaryViewController: UIViewController {
 
     @IBOutlet weak var SummaryTable: UITableView!
+    let accReceivableRepo = FireAccReceivableRepository()
+    let accPayableRepo = FireRepository()
+    var accountsReceivable: [AccountReceivable] = []
+    var accountsPayable: [AccountPayable] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configureTable()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureData()
     }
     
     func configureView() {
@@ -28,6 +36,17 @@ class AccSummaryViewController: UIViewController {
         SummaryTable.tableFooterView = UIView()
         SummaryTable.backgroundColor = .clear
     }
+    
+    func configureData() {
+        accPayableRepo.readAll { accounts in
+            self.accountsPayable = accounts
+            self.SummaryTable.reloadData()
+        }
+        accReceivableRepo.readAll { accounts in
+            self.accountsReceivable = accounts
+            self.SummaryTable.reloadData()
+        }
+    }
 }
 
 extension AccSummaryViewController: UITableViewDelegate, UITableViewDataSource {
@@ -37,10 +56,12 @@ extension AccSummaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = SummaryTable.dequeueReusableCell(withIdentifier: "accSummaryCell") as! AccSummaryViewCell
+        let receivableTotal = self.accountsReceivable.reduce(0, { partial, item in partial + item.value })
+        let payableTotal = self.accountsPayable.reduce(0, { partial, item in partial + item.value })
         if(indexPath.row == 0) {
-            cell.configCell(title: "Contas a Pagar", amount: 10, total: 20.00)
+            cell.configCell(title: "Contas a Pagar", amount: self.accountsPayable.count, total: payableTotal)
         } else {
-            cell.configCell(title: "Contas a Receber", amount: 20, total: 30.00)
+            cell.configCell(title: "Contas a Receber", amount: self.accountsReceivable.count, total: receivableTotal)
         }
         return cell
     }
